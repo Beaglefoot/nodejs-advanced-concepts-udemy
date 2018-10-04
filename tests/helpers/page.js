@@ -33,6 +33,10 @@ class CustomPage {
     // await page.waitFor('a[href="/auth/logout"]');
     await this.page.waitForResponse('http://localhost:3000/api/current_user');
   }
+
+  async getContentsOf(selector) {
+    return this.page.$eval(selector, el => el.innerHTML);
+  }
 }
 
 module.exports = CustomPage;
