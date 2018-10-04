@@ -28,7 +28,7 @@ class CustomPage {
 
     await this.page.setCookie({ name: 'session', value: session });
     await this.page.setCookie({ name: 'session.sig', value: sig });
-    await this.page.goto('localhost:3000');
+    await this.page.goto('localhost:3000/blogs');
     // This one looks more correct istead of solution in course
     // await page.waitFor('a[href="/auth/logout"]');
     await this.page.waitForResponse('http://localhost:3000/api/current_user');
